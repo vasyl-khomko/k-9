@@ -13,6 +13,7 @@ import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.WorkerThread;
 import android.util.Log;
@@ -67,6 +68,7 @@ public class MessageCryptoHelper {
     private MessageCryptoCallback callback;
 
     private LocalMessage currentMessage;
+    private OpenPgpDecryptionResult cachedDecryptionResult;
     private MessageCryptoAnnotations queuedResult;
     private PendingIntent queuedPendingIntent;
 
@@ -93,7 +95,8 @@ public class MessageCryptoHelper {
         }
     }
 
-    public void asyncStartOrResumeProcessingMessage(LocalMessage message, MessageCryptoCallback callback) {
+    public void asyncStartOrResumeProcessingMessage(LocalMessage message, MessageCryptoCallback callback,
+            OpenPgpDecryptionResult cachedDecryptionResult) {
         if (this.currentMessage != null) {
             reattachCallback(message, callback);
             return;
@@ -101,6 +104,7 @@ public class MessageCryptoHelper {
 
         this.messageAnnotations = new MessageCryptoAnnotations();
         this.currentMessage = message;
+        this.cachedDecryptionResult = cachedDecryptionResult;
         this.callback = callback;
 
         runFirstPass();
@@ -227,18 +231,26 @@ public class MessageCryptoHelper {
         Intent decryptIntent = userInteractionResultIntent;
         userInteractionResultIntent = null;
         if (decryptIntent == null) {
-            decryptIntent = new Intent();
+            decryptIntent = getDecryptionIntent();
         }
         decryptVerify(decryptIntent);
     }
 
-    private void decryptVerify(Intent intent) {
-        intent.setAction(OpenPgpApi.ACTION_DECRYPT_VERIFY);
+    @NonNull
+    private Intent getDecryptionIntent() {
+        Intent decryptIntent = new Intent(OpenPgpApi.ACTION_DECRYPT_VERIFY);
+
         Address[] from = currentMessage.getFrom();
         if (from.length > 0) {
-            intent.putExtra(OpenPgpApi.EXTRA_SENDER_ADDRESS, from[0].getAddress());
+            decryptIntent.putExtra(OpenPgpApi.EXTRA_SENDER_ADDRESS, from[0].getAddress());
         }
 
+        decryptIntent.putExtra(OpenPgpApi.EXTRA_DECRYPTION_RESULT, cachedDecryptionResult);
+
+        return decryptIntent;
+    }
+
+    private void decryptVerify(Intent intent) {
         try {
             CryptoPartType cryptoPartType = currentCryptoPart.type;
             switch (cryptoPartType) {
