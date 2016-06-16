@@ -8,9 +8,9 @@ import java.util.List;
 
 import android.content.Context;
 import android.support.annotation.VisibleForTesting;
+import android.support.annotation.WorkerThread;
 
 import com.fsck.k9.R;
-import com.fsck.k9.ui.crypto.MessageCryptoSplitter;
 import com.fsck.k9.helper.HtmlConverter;
 import com.fsck.k9.mail.Address;
 import com.fsck.k9.mail.Message;
@@ -20,6 +20,7 @@ import com.fsck.k9.mail.internet.MessageExtractor;
 import com.fsck.k9.mail.internet.Viewable;
 import com.fsck.k9.message.extractors.AttachmentInfoExtractor;
 import com.fsck.k9.ui.crypto.MessageCryptoAnnotations;
+import com.fsck.k9.ui.crypto.MessageCryptoSplitter;
 import com.fsck.k9.ui.crypto.MessageCryptoSplitter.CryptoMessageParts;
 
 import static com.fsck.k9.mail.internet.MimeUtility.getHeaderParameter;
@@ -40,6 +41,7 @@ public class MessageViewInfoExtractor {
 
     private MessageViewInfoExtractor() {}
 
+    @WorkerThread
     public static MessageViewInfo extractMessageForView(Context context,
             Message message, MessageCryptoAnnotations annotations) throws MessagingException {
 

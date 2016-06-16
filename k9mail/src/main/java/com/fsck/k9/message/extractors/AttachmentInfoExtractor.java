@@ -8,6 +8,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.net.Uri;
+import android.support.annotation.WorkerThread;
 
 import com.fsck.k9.mail.Body;
 import com.fsck.k9.mail.MessagingException;
@@ -22,6 +23,7 @@ import com.fsck.k9.provider.K9FileProvider;
 
 
 public class AttachmentInfoExtractor {
+    @WorkerThread
     public static List<AttachmentViewInfo> extractAttachmentInfos(Context context, List<Part> attachmentParts)
             throws MessagingException {
 
@@ -33,6 +35,7 @@ public class AttachmentInfoExtractor {
         return attachments;
     }
 
+    @WorkerThread
     public static AttachmentViewInfo extractAttachmentInfo(Context context, Part part) throws MessagingException {
         Uri uri;
         long size;
@@ -64,10 +67,12 @@ public class AttachmentInfoExtractor {
         return extractAttachmentInfo(part, uri, size);
     }
 
+    @WorkerThread
     public static AttachmentViewInfo extractAttachmentInfo(Part part) throws MessagingException {
         return extractAttachmentInfo(part, Uri.EMPTY, AttachmentViewInfo.UNKNOWN_SIZE);
     }
 
+    @WorkerThread
     private static AttachmentViewInfo extractAttachmentInfo(Part part, Uri uri, long size) throws MessagingException {
         boolean firstClassAttachment = true;
 
@@ -100,6 +105,7 @@ public class AttachmentInfoExtractor {
         return new AttachmentViewInfo(mimeType, name, attachmentSize, uri, firstClassAttachment, part);
     }
 
+    @WorkerThread
     private static long extractAttachmentSize(String contentDisposition, long size) {
         if (size != AttachmentViewInfo.UNKNOWN_SIZE) {
             return size;
