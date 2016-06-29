@@ -23,11 +23,11 @@ import com.fsck.k9.controller.MessagingListener;
 import com.fsck.k9.helper.RetainFragment;
 import com.fsck.k9.mail.Flag;
 import com.fsck.k9.mailstore.LocalMessage;
-import com.fsck.k9.mailstore.MessageViewInfo;
 import com.fsck.k9.ui.crypto.MessageCryptoAnnotations;
 import com.fsck.k9.ui.crypto.MessageCryptoCallback;
 import com.fsck.k9.ui.crypto.MessageCryptoHelper;
 import com.fsck.k9.ui.message.LocalMessageExtractorLoader;
+import com.fsck.k9.ui.message.LocalMessageExtractorLoader.MessageInfoExtractor;
 import com.fsck.k9.ui.message.LocalMessageLoader;
 import org.openintents.openpgp.OpenPgpDecryptionResult;
 
@@ -66,7 +66,7 @@ import org.openintents.openpgp.OpenPgpDecryptionResult;
  * consistency, reloading if there is a mismatch.
  *
  */
-public class MessageLoaderHelper {
+public class MessageLoaderHelper<T> {
     private static final int LOCAL_MESSAGE_LOADER_ID = 1;
     private static final int DECODE_MESSAGE_LOADER_ID = 2;
 
@@ -76,7 +76,7 @@ public class MessageLoaderHelper {
     private final FragmentManager fragmentManager;
     private final LoaderManager loaderManager;
     @Nullable // may be cleared
-    private MessageLoaderCallbacks callback;
+    private MessageLoaderCallbacks<T> callback;
 
 
     // transient state
@@ -88,10 +88,11 @@ public class MessageLoaderHelper {
     private OpenPgpDecryptionResult cachedDecryptionResult;
 
     private MessageCryptoHelper messageCryptoHelper;
+    private MessageInfoExtractor<T> messageInfoExtractor;
 
 
     public MessageLoaderHelper(Context context, LoaderManager loaderManager, FragmentManager fragmentManager,
-            @NonNull MessageLoaderCallbacks callback) {
+            @NonNull MessageLoaderCallbacks<T> callback) {
         this.context = context;
         this.loaderManager = loaderManager;
         this.fragmentManager = fragmentManager;
@@ -315,9 +316,16 @@ public class MessageLoaderHelper {
     // decode message
 
     private void startOrResumeDecodeMessage() {
-        LocalMessageExtractorLoader loader =
-                (LocalMessageExtractorLoader) loaderManager.<MessageViewInfo>getLoader(DECODE_MESSAGE_LOADER_ID);
-        boolean isLoaderStale = (loader == null) || !loader.isCreatedFor(localMessage, messageCryptoAnnotations);
+        if (callback == null) {
+            throw new IllegalStateException("unexpected call when callback is already detached");
+        }
+
+        messageInfoExtractor = callback.getMessageInfoExtractor();
+
+        LocalMessageExtractorLoader<T> loader =
+                (LocalMessageExtractorLoader<T>) loaderManager.getLoader(DECODE_MESSAGE_LOADER_ID);
+        boolean isLoaderStale = (loader == null) || !loader.isCreatedFor(
+                messageInfoExtractor, localMessage, messageCryptoAnnotations);
 
         if (isLoaderStale) {
             Log.d(K9.LOG_TAG, "Creating new decode message loader");
@@ -328,42 +336,43 @@ public class MessageLoaderHelper {
         }
     }
 
-    private void onDecodeMessageFinished(MessageViewInfo messageViewInfo) {
+    private void onDecodeMessageFinished(T decodedMessageInfo) {
         if (callback == null) {
             throw new IllegalStateException("unexpected call when callback is already detached");
         }
 
-        if (messageViewInfo == null) {
+        if (decodedMessageInfo == null) {
             callback.onMessageViewInfoLoadFailed(localMessage);
             return;
         }
 
-        callback.onMessageViewInfoLoadFinished(localMessage, messageViewInfo);
+        callback.onMessageViewInfoLoadFinished(localMessage, decodedMessageInfo);
     }
 
     private void cancelAndClearDecodeLoader() {
         loaderManager.destroyLoader(DECODE_MESSAGE_LOADER_ID);
     }
 
-    private LoaderCallbacks<MessageViewInfo> decodeMessageLoaderCallback = new LoaderCallbacks<MessageViewInfo>() {
+    private LoaderCallbacks<T> decodeMessageLoaderCallback = new LoaderCallbacks<T>() {
         @Override
-        public Loader<MessageViewInfo> onCreateLoader(int id, Bundle args) {
+        public Loader<T> onCreateLoader(int id, Bundle args) {
             if (id != DECODE_MESSAGE_LOADER_ID) {
                 throw new IllegalStateException("loader id must be message decoder id");
             }
-            return new LocalMessageExtractorLoader(context, localMessage, messageCryptoAnnotations);
+            return new LocalMessageExtractorLoader<>(
+                    context, messageInfoExtractor, localMessage, messageCryptoAnnotations);
         }
 
         @Override
-        public void onLoadFinished(Loader<MessageViewInfo> loader, MessageViewInfo messageViewInfo) {
+        public void onLoadFinished(Loader<T> loader, T decodedMessageInfo) {
             if (loader.getId() != DECODE_MESSAGE_LOADER_ID) {
                 throw new IllegalStateException("loader id must be message decoder id");
             }
-            onDecodeMessageFinished(messageViewInfo);
+            onDecodeMessageFinished(decodedMessageInfo);
         }
 
         @Override
-        public void onLoaderReset(Loader<MessageViewInfo> loader) {
+        public void onLoaderReset(Loader<T> loader) {
             if (loader.getId() != DECODE_MESSAGE_LOADER_ID) {
                 throw new IllegalStateException("loader id must be message decoder id");
             }
@@ -423,11 +432,11 @@ public class MessageLoaderHelper {
 
     // callback interface
 
-    public interface MessageLoaderCallbacks {
+    public interface MessageLoaderCallbacks<T> {
         void onMessageDataLoadFinished(LocalMessage message);
         void onMessageDataLoadFailed();
 
-        void onMessageViewInfoLoadFinished(LocalMessage localMessage, MessageViewInfo messageViewInfo);
+        void onMessageViewInfoLoadFinished(LocalMessage localMessage, T messageViewInfo);
         void onMessageViewInfoLoadFailed(LocalMessage localMessage);
 
         void setLoadingProgress(int current, int max);
@@ -437,6 +446,7 @@ public class MessageLoaderHelper {
 
         void onDownloadErrorMessageNotFound();
         void onDownloadErrorNetworkError();
-    }
 
+        MessageInfoExtractor<T> getMessageInfoExtractor();
+    }
 }

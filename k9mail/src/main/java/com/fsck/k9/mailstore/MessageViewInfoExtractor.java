@@ -22,6 +22,7 @@ import com.fsck.k9.message.extractors.AttachmentInfoExtractor;
 import com.fsck.k9.ui.crypto.MessageCryptoAnnotations;
 import com.fsck.k9.ui.crypto.MessageCryptoSplitter;
 import com.fsck.k9.ui.crypto.MessageCryptoSplitter.CryptoMessageParts;
+import com.fsck.k9.ui.message.LocalMessageExtractorLoader.MessageInfoExtractor;
 
 import static com.fsck.k9.mail.internet.MimeUtility.getHeaderParameter;
 import static com.fsck.k9.mail.internet.Viewable.Alternative;
@@ -30,7 +31,8 @@ import static com.fsck.k9.mail.internet.Viewable.MessageHeader;
 import static com.fsck.k9.mail.internet.Viewable.Text;
 import static com.fsck.k9.mail.internet.Viewable.Textual;
 
-public class MessageViewInfoExtractor {
+public class MessageViewInfoExtractor implements MessageInfoExtractor<MessageViewInfo> {
+    private static final MessageViewInfoExtractor messageViewInfoExtractor = new MessageViewInfoExtractor();
     private static final String TEXT_DIVIDER =
             "------------------------------------------------------------------------";
     private static final int TEXT_DIVIDER_LENGTH = TEXT_DIVIDER.length();
@@ -39,10 +41,15 @@ public class MessageViewInfoExtractor {
     private static final String FILENAME_SUFFIX = " ";
     private static final int FILENAME_SUFFIX_LENGTH = FILENAME_SUFFIX.length();
 
+
     private MessageViewInfoExtractor() {}
 
+    public static MessageViewInfoExtractor getInstance() {
+        return messageViewInfoExtractor;
+    }
+
     @WorkerThread
-    public static MessageViewInfo extractMessageForView(Context context,
+    public MessageViewInfo extractMessageInfo(Context context,
             Message message, MessageCryptoAnnotations annotations) throws MessagingException {
 
         Part rootPart;
@@ -79,7 +86,7 @@ public class MessageViewInfoExtractor {
                 attachmentInfos, cryptoResultAnnotation, extraViewableText, extraAttachmentInfos, attachmentResolver);
     }
 
-    private static ViewableExtractedText extractViewableAndAttachments(Context context, List<Part> parts,
+    private ViewableExtractedText extractViewableAndAttachments(Context context, List<Part> parts,
             List<AttachmentViewInfo> attachmentInfos) throws MessagingException {
         ArrayList<Viewable> viewableParts = new ArrayList<>();
         ArrayList<Part> attachments = new ArrayList<>();
@@ -89,7 +96,7 @@ public class MessageViewInfoExtractor {
         }
 
         attachmentInfos.addAll(AttachmentInfoExtractor.extractAttachmentInfos(context, attachments));
-        return MessageViewInfoExtractor.extractTextFromViewables(context, viewableParts);
+        return extractTextFromViewables(context, viewableParts);
     }
 
     /**
@@ -103,7 +110,7 @@ public class MessageViewInfoExtractor {
      *          In case of an error.
      */
     @VisibleForTesting
-    static ViewableExtractedText extractTextFromViewables(Context context, List<Viewable> viewables)
+    ViewableExtractedText extractTextFromViewables(Context context, List<Viewable> viewables)
             throws MessagingException {
         try {
             // Collect all viewable parts
@@ -190,7 +197,7 @@ public class MessageViewInfoExtractor {
      *
      * @return The contents of the supplied viewable instance as HTML.
      */
-    private static StringBuilder buildHtml(Viewable viewable, boolean prependDivider) {
+    private StringBuilder buildHtml(Viewable viewable, boolean prependDivider) {
         StringBuilder html = new StringBuilder();
         if (viewable instanceof Textual) {
             Part part = ((Textual)viewable).getPart();
@@ -221,7 +228,7 @@ public class MessageViewInfoExtractor {
         return html;
     }
 
-    private static StringBuilder buildText(Viewable viewable, boolean prependDivider) {
+    private StringBuilder buildText(Viewable viewable, boolean prependDivider) {
         StringBuilder text = new StringBuilder();
         if (viewable instanceof Textual) {
             Part part = ((Textual)viewable).getPart();
@@ -263,7 +270,7 @@ public class MessageViewInfoExtractor {
      * @param prependDivider
      *         {@code true}, if the divider should be appended. {@code false}, otherwise.
      */
-    private static void addHtmlDivider(StringBuilder html, Part part, boolean prependDivider) {
+    private void addHtmlDivider(StringBuilder html, Part part, boolean prependDivider) {
         if (prependDivider) {
             String filename = getPartName(part);
 
@@ -281,7 +288,7 @@ public class MessageViewInfoExtractor {
      *
      * @return The (file)name of the part if available. An empty string, otherwise.
      */
-    private static String getPartName(Part part) {
+    private String getPartName(Part part) {
         String disposition = part.getDisposition();
         if (disposition != null) {
             String name = getHeaderParameter(disposition, "filename");
@@ -302,7 +309,7 @@ public class MessageViewInfoExtractor {
      * @param prependDivider
      *         {@code true}, if the divider should be appended. {@code false}, otherwise.
      */
-    private static void addTextDivider(StringBuilder text, Part part, boolean prependDivider) {
+    private void addTextDivider(StringBuilder text, Part part, boolean prependDivider) {
         if (prependDivider) {
             String filename = getPartName(part);
 
@@ -338,7 +345,7 @@ public class MessageViewInfoExtractor {
      * @throws com.fsck.k9.mail.MessagingException
      *          In case of an error.
      */
-    private static void addMessageHeaderText(Context context, StringBuilder text, Message message)
+    private void addMessageHeaderText(Context context, StringBuilder text, Message message)
             throws MessagingException {
         // From: <sender>
         Address[] from = message.getFrom();
@@ -401,7 +408,7 @@ public class MessageViewInfoExtractor {
      * @throws com.fsck.k9.mail.MessagingException
      *          In case of an error.
      */
-    private static void addMessageHeaderHtml(Context context, StringBuilder html, Message message)
+    private void addMessageHeaderHtml(Context context, StringBuilder html, Message message)
             throws MessagingException {
 
         html.append("<table style=\"border: 0\">");
@@ -452,7 +459,7 @@ public class MessageViewInfoExtractor {
      * @param value
      *         The string to be put in the {@code TD} element.
      */
-    private static void addTableRow(StringBuilder html, String header, String value) {
+    private void addTableRow(StringBuilder html, String header, String value) {
         html.append("<tr><th style=\"text-align: left; vertical-align: top;\">");
         html.append(header);
         html.append("</th>");
