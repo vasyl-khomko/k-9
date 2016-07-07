@@ -1,0 +1,10 @@
+files:
+  - 
+    source: /k9mail/src/main/res/values/strings.xml
+    translation: '/k9mail/src/main/res/values-%locale%/strings.xml'
+    languages_mapping:
+      locale:
+        ar: ar
+        uk: uk
+        zh-CN: zh-rCN
+        de: de
