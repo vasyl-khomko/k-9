@@ -1,4 +1,0 @@
-files:
-  - 
-    source: /k9mail/src/main/res/values/strings.xml
-    translation: '/k9mail/src/main/res/values-%android_code%/strings.xml'
