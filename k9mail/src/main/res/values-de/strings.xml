@@ -152,7 +152,7 @@ Bitte senden Sie Fehlerberichte, Ideen für neue Funktionen und stellen Sie Frag
   <string name="status_loading_more">Nachrichten werden geladen\u2026</string>
   <string name="status_network_error">Verbindungsfehler</string>
   <string name="status_invalid_id_error">Nachricht nicht gefunden</string>
-  <string name="status_loading_error">Message loading error</string>
+  <string name="status_loading_error">Nachricht loading Fehler</string>
   <string name="status_loading_more_failed">Laden weiterer Nachrichten erneut starten</string>
   <string name="load_more_messages_fmt">Bis zu <xliff:g id="messages_to_load">%d</xliff:g> weitere abrufen</string>
   <string name="abbrev_gigabytes">GB</string>
