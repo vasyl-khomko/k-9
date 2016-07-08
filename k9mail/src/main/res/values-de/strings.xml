@@ -180,7 +180,7 @@ Bitte senden Sie Fehlerberichte, Ideen für neue Funktionen und stellen Sie Frag
   <string name="notification_action_spam">Spam</string>
   <string name="notification_certificate_error_title">Zertifikatsproblem (<xliff:g id="account">%s</xliff:g>)</string>
   <string name="notification_certificate_error_text">Überprüfen Sie Ihre Servereinstellungen</string>
-  <string name="notification_authentication_error_title">Authentication failed</string>
+  <string name="notification_authentication_error_title">Authentifizierung fehlgeschlagen</string>
   <string name="notification_authentication_error_text">Authentication failed for <xliff:g id="account">%s</xliff:g>. Update your server settings.</string>
   <string name="notification_bg_sync_ticker">Neue E-Mails in <xliff:g id="account">%s</xliff:g>:<xliff:g id="folder">%s</xliff:g> werden abgerufen</string>
   <string name="notification_bg_sync_title">E-Mails werden abgerufen</string>
