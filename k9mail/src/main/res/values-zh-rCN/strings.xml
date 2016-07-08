@@ -151,7 +151,7 @@ Please submit bug reports, contribute new features and ask questions at
   <string name="status_loading_more">正在加载邮件\u2026</string>
   <string name="status_network_error">连接错误</string>
   <string name="status_invalid_id_error">邮件未找到</string>
-  <string name="status_loading_error">Message loading error</string>
+  <string name="status_loading_error">消息载的错误</string>
   <string name="status_loading_more_failed">再次尝试加载更多邮件</string>
   <string name="load_more_messages_fmt">再加载<xliff:g id="messages_to_load">%d</xliff:g>封邮件</string>
   <string name="abbrev_gigabytes">GB</string>
