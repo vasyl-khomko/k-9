@@ -5,7 +5,7 @@
   <!-- This should make it easier for forks to change the branding -->
   <!-- Used in AndroidManifest.xml -->
   <string name="app_name">K-9 Пошти</string>
-  <string name="shortcuts_title">K-9 Accounts</string>
+  <string name="shortcuts_title">K-9 Облікові записи</string>
   <string name="unread_widget_label">K-9 Непрочитані</string>
   <string name="remote_control_label">Дситанційне управління K-9 Mail</string>
   <string name="remote_control_desc">Дозволяє цій програмі управляти діяльністю та налаштуваннями K-9 Mail.</string>
@@ -51,7 +51,7 @@ K-9 Mail-це потужний безкоштовний поштовий клі�
   <string name="account_recreate_dlg_instructions_fmt">Усі дані \"<xliff:g id="account">%s</xliff:g>\" буде вилучено з K-9 Mail, але налаштування облікового запису будуть збережені.</string>
   <string name="account_clear_dlg_instructions_fmt">Усі повідомлення у \"<xliff:g id="account">%s</xliff:g>\" буде вилучено з K-9 Mail, але налаштування облікового запису будуть збережені.</string>
   <!-- === App Store-specific strings ======================================================= -->
-  <string name="import_dialog_error_message">Please install a file manager to continue with this import.</string>
+  <string name="import_dialog_error_message">Немає відповідної програми для завершення операції імпорту. Будь ласка інсталюйте файловий менеджер з Play Google.</string>
   <string name="open_market">Відкрити Play Google</string>
   <!-- === General strings ================================================================== -->
   <string name="app_authors_fmt">Автори: <xliff:g id="app_authors">%s</xliff:g></string>
