@@ -89,7 +89,7 @@ K-9 Mail-це потужний безкоштовний поштовий клі�
   <string name="cancel_action">Відмінити</string>
   <string name="send_action">Надіслати</string>
   <string name="send_again_action">Надіслати знову</string>
-  <string name="empty_subject">Subject is empty, click again to send anyway</string>
+  <string name="empty_subject">Тема порожня, знову натисніть кнопку Відправити</string>
   <string name="select_action">Вибрати</string>
   <string name="deselect_action">Скасувати вибір</string>
   <string name="reply_action">Відповісти</string>
