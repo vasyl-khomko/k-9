@@ -45,7 +45,7 @@ K-9 Mail-це потужний безкоштовний поштовий клі�
 <a href="https://github.com/k9mail/k-9/">https://github-е. ком/k9mail/к-9/</a>.
 </p>    ]]></string>
   <!-- Default signature -->
-  <string name="default_signature">-- \nSent from my Android device with K-9 Mail. Please excuse my brevity.</string>
+  <string name="default_signature">-- nSent \n мого Android пристрою з K-9 пошти. Прошу вибачення за стислість.</string>
   <!-- General strings that include the app name -->
   <string name="account_delete_dlg_instructions_fmt">Обліковий запис \"<xliff:g id="account">%s</xliff:g>\" буде вилучено з K-9 Mail.</string>
   <string name="account_recreate_dlg_instructions_fmt">Усі дані \"<xliff:g id="account">%s</xliff:g>\" буде вилучено з K-9 Mail, але налаштування облікового запису будуть збережені.</string>
