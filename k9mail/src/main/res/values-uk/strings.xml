@@ -14,7 +14,7 @@
   <string name="app_copyright_fmt">Copyright 2008-<xliff:g>%s</xliff:g> The K-9 Dog Walkers. Portions Copyright 2006-<xliff:g>%s</xliff:g> the Android Open Source Project.</string>
   <string name="app_license">Ліцензія Apache License, Version 2.0.</string>
   <!-- Welcome message -->
-  <string name="welcome_message_title">Welcome to K-9 Mail</string>
+  <string name="welcome_message_title">Ласкаво просимо до K-9 Mail</string>
   <string name="accounts_welcome"><![CDATA[
 <p>
 K-9 Mail is a powerful free email client for Android.
@@ -52,8 +52,8 @@ Please submit bug reports, contribute new features and ask questions at
   <string name="account_recreate_dlg_instructions_fmt">Усі дані \"<xliff:g id="account">%s</xliff:g>\" буде вилучено з K-9 Mail, але налаштування облікового запису будуть збережені.</string>
   <string name="account_clear_dlg_instructions_fmt">Усі повідомлення у \"<xliff:g id="account">%s</xliff:g>\" буде вилучено з K-9 Mail, але налаштування облікового запису будуть збережені.</string>
   <!-- === App Store-specific strings ======================================================= -->
-  <string name="import_dialog_error_message">Please install a file manager to continue with this import.</string>
-  <string name="open_market">Open Play Store</string>
+  <string name="import_dialog_error_message">Немає відповідної програми для завершення операції імпорту. Будь ласка інсталюйте файловий менеджер з Play Google.</string>
+  <string name="open_market">Відкрити Play Google</string>
   <!-- === General strings ================================================================== -->
   <string name="app_authors_fmt">Автори: <xliff:g id="app_authors">%s</xliff:g></string>
   <string name="app_revision_fmt">Інформація про зміни: <xliff:g id="app_revision_url">%s</xliff:g></string>
@@ -62,8 +62,8 @@ Please submit bug reports, contribute new features and ask questions at
   <string name="read_attachment_label">читати вкладення електронної пошти</string>
   <string name="read_attachment_desc">Дозволити цій програмі читати вкладення електронної пошти.</string>
   <string name="read_messages_label">читати листи</string>
-  <string name="read_messages_desc">Allows this application to read your Emails.</string>
-  <string name="delete_messages_label">Delete Emails</string>
+  <string name="read_messages_desc">Дозволити цій програмі читати ваші листи.</string>
+  <string name="delete_messages_label">Видалити листи</string>
   <string name="delete_messages_desc">Дозволити цій програмі видаляти ваші листи.</string>
   <string name="about_title_fmt">Про <xliff:g id="app_name">%s</xliff:g></string>
   <string name="accounts_title">Облікові записи</string>
@@ -72,8 +72,8 @@ Please submit bug reports, contribute new features and ask questions at
   <string name="message_list_title"><xliff:g id="account">%s</xliff:g>:<xliff:g id="folder">%s</xliff:g> </string>
   <string name="compose_title_compose">Написати новий лист</string>
   <string name="compose_title_reply">Відповісти</string>
-  <string name="compose_title_reply_all">Reply all</string>
-  <string name="compose_title_forward">Forward</string>
+  <string name="compose_title_reply_all">Відповісти всім</string>
+  <string name="compose_title_forward">Переслати</string>
   <string name="choose_folder_title">Вибрати папку</string>
   <string name="status_loading_account_folder">Запит <xliff:g id="account">%s</xliff:g>:<xliff:g id="folder">%s</xliff:g><xliff:g id="progress">%s</xliff:g></string>
   <string name="status_loading_account_folder_headers">Отримання заголовків <xliff:g id="account">%s</xliff:g>:<xliff:g id="folder">%s</xliff:g><xliff:g id="progress">%s</xliff:g></string>
