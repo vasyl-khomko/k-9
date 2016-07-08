@@ -173,7 +173,7 @@ K-9 Mail-це потужний безкоштовний поштовий клі�
   <string name="notification_additional_messages">+ <xliff:g id="additional_messages">%1$d</xliff:g> more on <xliff:g id="account">%2$s</xliff:g></string>
   <string name="notification_action_reply">Відповісти</string>
   <string name="notification_action_mark_as_read">Позначити як прочитаний</string>
-  <string name="notification_action_mark_all_as_read">Mark All Read</string>
+  <string name="notification_action_mark_all_as_read">Позначити всі прочитані</string>
   <string name="notification_action_delete">Видалити</string>
   <string name="notification_action_delete_all">Delete All</string>
   <string name="notification_action_archive">Archive</string>
