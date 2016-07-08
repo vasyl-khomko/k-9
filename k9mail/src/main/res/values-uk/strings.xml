@@ -51,8 +51,8 @@ K-9 Mail-це потужний безкоштовний поштовий клі�
   <string name="account_recreate_dlg_instructions_fmt">Усі дані \"<xliff:g id="account">%s</xliff:g>\" буде вилучено з K-9 Mail, але налаштування облікового запису будуть збережені.</string>
   <string name="account_clear_dlg_instructions_fmt">Усі повідомлення у \"<xliff:g id="account">%s</xliff:g>\" буде вилучено з K-9 Mail, але налаштування облікового запису будуть збережені.</string>
   <!-- === App Store-specific strings ======================================================= -->
-  <string name="import_dialog_error_message">Немає відповідної програми для завершення операції імпорту. Будь ласка інсталюйте файловий менеджер з Play Google.</string>
-  <string name="open_market">Відкрити Play Google</string>
+  <string name="import_dialog_error_message">Please install a file manager to continue with this import.</string>
+  <string name="open_market">Open Play Store</string>
   <!-- === General strings ================================================================== -->
   <string name="app_authors_fmt">Автори: <xliff:g id="app_authors">%s</xliff:g></string>
   <string name="app_revision_fmt">Інформація про зміни: <xliff:g id="app_revision_url">%s</xliff:g></string>
