@@ -17,34 +17,33 @@
   <string name="welcome_message_title">Ласкаво просимо до K-9 Mail</string>
   <string name="accounts_welcome"><![CDATA[
 <p>
-K-9 Mail is a powerful free email client for Android.
+K-9 Mail-це потужний безкоштовний поштовий клієнт для Android.
 </p><p>
-Its improved features include:
+Його потужні функції включають в себе:
 </p>
 <ul>
-  <li>Push mail using IMAP IDLE</li>
-  <li>Better performance</li>
-  <li>Message refiling</li>
-  <li>Email signatures</li>
-  <li>Bcc-to-self</li>
-  <li>Folder subscriptions</li>
-  <li>All folder synchronization</li>
-  <li>Return-address configuration</li>
-  <li>Keyboard shortcuts</li>
-  <li>Better IMAP support</li>
-  <li>Saving attachments to SD</li>
-  <li>Empty Trash</li>
-  <li>Message sorting</li>
-  <li>…and more</li>
+<li>Push пошти IMAP IDLE</li>
+<li>Better performance</li>
+<li>Message refiling</li>
+<li>Email signatures</li>
+<li>Bcc до self</li>
+<li>Folder subscriptions</li>
+Папка <li>All synchronization</li>
+<li>Return-адреса configuration</li>
+<li>Keyboard shortcuts</li>
+<li>Better ИМАП support</li>
+<li>Saving вкладень SD</li>
+<li>Empty Trash</li>
+<li>Message sorting</li>
+<li>...і more</li>
 </ul>
 <p>
-Please note that K-9 does not support most free Hotmail accounts and, like many mail clients, has
-some quirks when talking to Microsoft Exchange.
+Зверніть увагу, що до-9 не підтримує більшість безкоштовних облікових записів Hotmail і, як багато поштові клієнти, має
+деякі особливо, коли мова йде Microsoft біржі.
 </p><p>
-Please submit bug reports, contribute new features and ask questions at
-<a href="https://github.com/k9mail/k-9/">https://github.com/k9mail/k-9/</a>.
-</p>
-    ]]></string>
+Будь ласка, повідомляйте про помилки, вносити нові функції і задавати питання в
+<a href="https://github.com/k9mail/k-9/">https://github-е. ком/k9mail/к-9/</a>.
+</p>    ]]></string>
   <!-- Default signature -->
   <string name="default_signature">-- \nSent from my Android device with K-9 Mail. Please excuse my brevity.</string>
   <!-- General strings that include the app name -->
