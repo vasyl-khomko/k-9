@@ -12,9 +12,9 @@
   <!-- Used in the about dialog -->
   <string name="app_authors">Гугл, К-9, Выгуливающих Собак.</string>
   <string name="app_copyright_fmt">Авторське Право 2008-<xliff:g>%s</xliff:g> До-9, Выгуливающих Собак. Частини авторського проекту 2006-<xliff:g>%s</xliff:g> відкритим вихідним кодом Android.</string>
-  <string name="app_license">Licensed under the Apache License, Version 2.0.</string>
+  <string name="app_license">Ліцензія Apache License, Version 2.0.</string>
   <!-- Welcome message -->
-  <string name="welcome_message_title">Welcome to K-9 Mail</string>
+  <string name="welcome_message_title">Ласкаво просимо до K-9 Mail</string>
   <string name="accounts_welcome"><![CDATA[
 <p>
 K-9 Mail-це потужний безкоштовний поштовий клієнт для Android.
@@ -47,21 +47,21 @@ K-9 Mail-це потужний безкоштовний поштовий клі�
   <!-- Default signature -->
   <string name="default_signature">-- nSent \n мого Android пристрою з K-9 пошти. Прошу вибачення за стислість.</string>
   <!-- General strings that include the app name -->
-  <string name="account_delete_dlg_instructions_fmt">The account \"<xliff:g id="account">%s</xliff:g>\" will be removed from K-9 Mail.</string>
+  <string name="account_delete_dlg_instructions_fmt">Обліковий запис \"<xliff:g id="account">%s</xliff:g>\" буде вилучено з K-9 Mail.</string>
   <string name="account_recreate_dlg_instructions_fmt">Усі дані \"<xliff:g id="account">%s</xliff:g>\" буде вилучено з K-9 Mail, але налаштування облікового запису будуть збережені.</string>
-  <string name="account_clear_dlg_instructions_fmt">Local copies of messages in \"<xliff:g id="account">%s</xliff:g>\" will be removed. Account settings will be retained.</string>
+  <string name="account_clear_dlg_instructions_fmt">Усі повідомлення у \"<xliff:g id="account">%s</xliff:g>\" буде вилучено з K-9 Mail, але налаштування облікового запису будуть збережені.</string>
   <!-- === App Store-specific strings ======================================================= -->
-  <string name="import_dialog_error_message">Please install a file manager to continue with this import.</string>
-  <string name="open_market">Open Play Store</string>
+  <string name="import_dialog_error_message">Немає відповідної програми для завершення операції імпорту. Будь ласка інсталюйте файловий менеджер з Play Google.</string>
+  <string name="open_market">Відкрити Play Google</string>
   <!-- === General strings ================================================================== -->
   <string name="app_authors_fmt">Автори: <xliff:g id="app_authors">%s</xliff:g></string>
-  <string name="app_revision_fmt">Revision Information: <xliff:g id="app_revision_url">%s</xliff:g></string>
-  <string name="app_libraries">We\'re using the following third-party libraries: <xliff:g id="app_libraries_list">%s</xliff:g></string>
-  <string name="app_emoji_icons">Emoji icons: <xliff:g id="app_emoji_icons_link">%s</xliff:g></string>
-  <string name="read_attachment_label">read Email attachments</string>
-  <string name="read_attachment_desc">Allows this application to read your Email attachments.</string>
+  <string name="app_revision_fmt">Інформація про зміни: <xliff:g id="app_revision_url">%s</xliff:g></string>
+  <string name="app_libraries">Ми використовуємо такі бібліотеки третіх сторін: <xliff:g id="app_libraries_list">%s</xliff:g></string>
+  <string name="app_emoji_icons">Смайлики настрою: <xliff:g id="app_emoji_icons_link">%s</xliff:g></string>
+  <string name="read_attachment_label">читати вкладення електронної пошти</string>
+  <string name="read_attachment_desc">Дозволити цій програмі читати вкладення електронної пошти.</string>
   <string name="read_messages_label">читати листи</string>
-  <string name="read_messages_desc">Allows this application to read your Emails.</string>
+  <string name="read_messages_desc">Дозволити цій програмі читати ваші листи.</string>
   <string name="delete_messages_label">Видалити листи</string>
   <string name="delete_messages_desc">Дозволити цій програмі видаляти ваші листи.</string>
   <string name="about_title_fmt">Про <xliff:g id="app_name">%s</xliff:g></string>
@@ -70,9 +70,9 @@ K-9 Mail-це потужний безкоштовний поштовий клі�
   <string name="advanced">Додатково</string>
   <string name="message_list_title"><xliff:g id="account">%s</xliff:g>:<xliff:g id="folder">%s</xliff:g> </string>
   <string name="compose_title_compose">Написати новий лист</string>
-  <string name="compose_title_reply">Reply</string>
-  <string name="compose_title_reply_all">Reply all</string>
-  <string name="compose_title_forward">Forward</string>
+  <string name="compose_title_reply">Відповісти</string>
+  <string name="compose_title_reply_all">Відповісти всім</string>
+  <string name="compose_title_forward">Переслати</string>
   <string name="choose_folder_title">Вибрати папку</string>
   <string name="status_loading_account_folder">Запит <xliff:g id="account">%s</xliff:g>:<xliff:g id="folder">%s</xliff:g><xliff:g id="progress">%s</xliff:g></string>
   <string name="status_loading_account_folder_headers">Отримання заголовків <xliff:g id="account">%s</xliff:g>:<xliff:g id="folder">%s</xliff:g><xliff:g id="progress">%s</xliff:g></string>
