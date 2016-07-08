@@ -236,7 +236,7 @@ K-9 Mail-це потужний безкоштовний поштовий клі�
   <string name="message_view_show_more_attachments_action">Більше&#8230;</string>
   <string name="message_view_no_viewer">Не знайдено програму для перегляду <xliff:g id="mimetype">%s</xliff:g>.</string>
   <string name="message_view_download_remainder">Завантажити усе повідомлення</string>
-  <string name="message_view_toast_unable_to_display_message">Unable to display message</string>
+  <string name="message_view_toast_unable_to_display_message">Не вдається відобразити повідомлення</string>
   <!-- NOTE: The following message refers to strings with id account_setup_incoming_save_all_headers_label and account_setup_incoming_title -->
   <string name="message_no_additional_headers_available">Всі заголовки завантажено, нема додаткових заголовків для відображення.</string>
   <string name="message_additional_headers_retrieval_failed">Не вдалося завантажити додаткові заголовки з бази даних або поштового сервера.</string>
