@@ -152,7 +152,7 @@ K-9 Mail-це потужний безкоштовний поштовий клі�
   <string name="status_loading_more">Завантажуються повідомлення\u2026</string>
   <string name="status_network_error">Помилка з’єднання</string>
   <string name="status_invalid_id_error">Повідомлення не знайдено</string>
-  <string name="status_loading_error">Message loading error</string>
+  <string name="status_loading_error">Помилка завантаження повідомлення</string>
   <string name="status_loading_more_failed">Спробуйте ще раз завантажити повідомлення</string>
   <string name="load_more_messages_fmt">Завантажити ще <xliff:g id="messages_to_load">%d</xliff:g> </string>
   <string name="abbrev_gigabytes">ГБ</string>
