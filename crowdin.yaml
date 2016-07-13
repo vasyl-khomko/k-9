@@ -5,9 +5,3 @@ files:
     languages_mapping:
       two_letters_code:
         zh-CN: zh-rCN
-  - 
-    source: '/**/*.md'
-    translation: '/%original_path%/%file_name%(%locale%).md'
-  - 
-    source: '/**/*.pot'
-    translation: '/%original_path%/%file_name%-%two_letters_code%.po'
