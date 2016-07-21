@@ -4,48 +4,49 @@
   <!-- === App-specific strings ============================================================= -->
   <!-- This should make it easier for forks to change the branding -->
   <!-- Used in AndroidManifest.xml -->
-  <string name="app_name">K-9 Пошти</string>
+  <string name="app_name">K-9 Mail</string>
   <string name="shortcuts_title">K-9 Облікові записи</string>
   <string name="unread_widget_label">K-9 Непрочитані</string>
   <string name="remote_control_label">Дситанційне управління K-9 Mail</string>
   <string name="remote_control_desc">Дозволяє цій програмі управляти діяльністю та налаштуваннями K-9 Mail.</string>
   <!-- Used in the about dialog -->
-  <string name="app_authors">Гугл, К-9, Выгуливающих Собак.</string>
-  <string name="app_copyright_fmt">Авторське Право 2008-<xliff:g>%s</xliff:g> До-9, Выгуливающих Собак. Частини авторського проекту 2006-<xliff:g>%s</xliff:g> відкритим вихідним кодом Android.</string>
+  <string name="app_authors">Google, The K-9 Dog Walkers.</string>
+  <string name="app_copyright_fmt">Copyright 2008-<xliff:g>%s</xliff:g> The K-9 Dog Walkers. Portions Copyright 2006-<xliff:g>%s</xliff:g> the Android Open Source Project.</string>
   <string name="app_license">Ліцензія Apache License, Version 2.0.</string>
   <!-- Welcome message -->
   <string name="welcome_message_title">Ласкаво просимо до K-9 Mail</string>
   <string name="accounts_welcome"><![CDATA[
 <p>
-K-9 Mail-це потужний безкоштовний поштовий клієнт для Android.
+K-9 Mail is a powerful free email client for Android.
 </p><p>
-Його потужні функції включають в себе:
+Its improved features include:
 </p>
 <ul>
-<li>Push пошти IMAP IDLE</li>
-<li>Better performance</li>
-<li>Message refiling</li>
-<li>Email signatures</li>
-<li>Bcc до self</li>
-<li>Folder subscriptions</li>
-Папка <li>All synchronization</li>
-<li>Return-адреса configuration</li>
-<li>Keyboard shortcuts</li>
-<li>Better ИМАП support</li>
-<li>Saving вкладень SD</li>
-<li>Empty Trash</li>
-<li>Message sorting</li>
-<li>...і more</li>
+  <li>Push mail using IMAP IDLE</li>
+  <li>Better performance</li>
+  <li>Message refiling</li>
+  <li>Email signatures</li>
+  <li>Bcc-to-self</li>
+  <li>Folder subscriptions</li>
+  <li>All folder synchronization</li>
+  <li>Return-address configuration</li>
+  <li>Keyboard shortcuts</li>
+  <li>Better IMAP support</li>
+  <li>Saving attachments to SD</li>
+  <li>Empty Trash</li>
+  <li>Message sorting</li>
+  <li>…and more</li>
 </ul>
 <p>
-Зверніть увагу, що до-9 не підтримує більшість безкоштовних облікових записів Hotmail і, як багато поштові клієнти, має
-деякі особливо, коли мова йде Microsoft біржі.
+Please note that K-9 does not support most free Hotmail accounts and, like many mail clients, has
+some quirks when talking to Microsoft Exchange.
 </p><p>
-Будь ласка, повідомляйте про помилки, вносити нові функції і задавати питання в
-<a href="https://github.com/k9mail/k-9/">https://github-е. ком/k9mail/к-9/</a>.
-</p>    ]]></string>
+Please submit bug reports, contribute new features and ask questions at
+<a href="https://github.com/k9mail/k-9/">https://github.com/k9mail/k-9/</a>.
+</p>
+    ]]></string>
   <!-- Default signature -->
-  <string name="default_signature">-- nSent \n мого Android пристрою з K-9 пошти. Прошу вибачення за стислість.</string>
+  <string name="default_signature">-- \nSent from my Android device with K-9 Mail. Please excuse my brevity.</string>
   <!-- General strings that include the app name -->
   <string name="account_delete_dlg_instructions_fmt">Обліковий запис \"<xliff:g id="account">%s</xliff:g>\" буде вилучено з K-9 Mail.</string>
   <string name="account_recreate_dlg_instructions_fmt">Усі дані \"<xliff:g id="account">%s</xliff:g>\" буде вилучено з K-9 Mail, але налаштування облікового запису будуть збережені.</string>
@@ -89,7 +90,7 @@ K-9 Mail-це потужний безкоштовний поштовий клі�
   <string name="cancel_action">Відмінити</string>
   <string name="send_action">Надіслати</string>
   <string name="send_again_action">Надіслати знову</string>
-  <string name="empty_subject">Тема порожня, знову натисніть кнопку Відправити</string>
+  <string name="empty_subject">Subject is empty, click again to send anyway</string>
   <string name="select_action">Вибрати</string>
   <string name="deselect_action">Скасувати вибір</string>
   <string name="reply_action">Відповісти</string>
@@ -152,7 +153,7 @@ K-9 Mail-це потужний безкоштовний поштовий клі�
   <string name="status_loading_more">Завантажуються повідомлення\u2026</string>
   <string name="status_network_error">Помилка з’єднання</string>
   <string name="status_invalid_id_error">Повідомлення не знайдено</string>
-  <string name="status_loading_error">Помилка завантаження повідомлення</string>
+  <string name="status_loading_error">Message loading error</string>
   <string name="status_loading_more_failed">Спробуйте ще раз завантажити повідомлення</string>
   <string name="load_more_messages_fmt">Завантажити ще <xliff:g id="messages_to_load">%d</xliff:g> </string>
   <string name="abbrev_gigabytes">ГБ</string>
@@ -173,7 +174,7 @@ K-9 Mail-це потужний безкоштовний поштовий клі�
   <string name="notification_additional_messages">+ <xliff:g id="additional_messages">%1$d</xliff:g> more on <xliff:g id="account">%2$s</xliff:g></string>
   <string name="notification_action_reply">Відповісти</string>
   <string name="notification_action_mark_as_read">Позначити як прочитаний</string>
-  <string name="notification_action_mark_all_as_read">Позначити всі прочитані</string>
+  <string name="notification_action_mark_all_as_read">Mark All Read</string>
   <string name="notification_action_delete">Видалити</string>
   <string name="notification_action_delete_all">Delete All</string>
   <string name="notification_action_archive">Archive</string>
@@ -181,7 +182,7 @@ K-9 Mail-це потужний безкоштовний поштовий клі�
   <string name="notification_action_spam">Spam</string>
   <string name="notification_certificate_error_title">Помилка сертифікату для <xliff:g id="account">%s</xliff:g></string>
   <string name="notification_certificate_error_text">Перевірте налаштування вашого серверу</string>
-  <string name="notification_authentication_error_title">Помилка автентифікації</string>
+  <string name="notification_authentication_error_title">Authentication failed</string>
   <string name="notification_authentication_error_text">Authentication failed for <xliff:g id="account">%s</xliff:g>. Update your server settings.</string>
   <string name="notification_bg_sync_ticker">Перевірка пошти: <xliff:g id="account">%s</xliff:g>:<xliff:g id="folder">%s</xliff:g></string>
   <string name="notification_bg_sync_title">Перевірка пошти</string>
@@ -236,7 +237,7 @@ K-9 Mail-це потужний безкоштовний поштовий клі�
   <string name="message_view_show_more_attachments_action">Більше&#8230;</string>
   <string name="message_view_no_viewer">Не знайдено програму для перегляду <xliff:g id="mimetype">%s</xliff:g>.</string>
   <string name="message_view_download_remainder">Завантажити усе повідомлення</string>
-  <string name="message_view_toast_unable_to_display_message">Не вдається відобразити повідомлення</string>
+  <string name="message_view_toast_unable_to_display_message">Unable to display message</string>
   <!-- NOTE: The following message refers to strings with id account_setup_incoming_save_all_headers_label and account_setup_incoming_title -->
   <string name="message_no_additional_headers_available">Всі заголовки завантажено, нема додаткових заголовків для відображення.</string>
   <string name="message_additional_headers_retrieval_failed">Не вдалося завантажити додаткові заголовки з бази даних або поштового сервера.</string>
