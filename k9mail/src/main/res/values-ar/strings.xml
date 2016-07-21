@@ -8,11 +8,11 @@
   <string name="shortcuts_title">K-9 Accounts</string>
   <string name="unread_widget_label">K-9 Unread</string>
   <string name="remote_control_label">K-9 Mail remote control</string>
-  <string name="remote_control_desc">يسمح هذا التطبيق التحكم K-9 البريد الأنشطة الإعدادات.</string>
+  <string name="remote_control_desc">Allows this application to control K-9 Mail activities and settings.</string>
   <!-- Used in the about dialog -->
   <string name="app_authors">Google, The K-9 Dog Walkers.</string>
   <string name="app_copyright_fmt">Copyright 2008-<xliff:g>%s</xliff:g> The K-9 Dog Walkers. Portions Copyright 2006-<xliff:g>%s</xliff:g> the Android Open Source Project.</string>
-  <string name="app_license">مرخص تحت رخصة أباتشي ، الإصدار 2.0.</string>
+  <string name="app_license">Licensed under the Apache License, Version 2.0.</string>
   <!-- Welcome message -->
   <string name="welcome_message_title">Welcome to K-9 Mail</string>
   <string name="accounts_welcome"><![CDATA[
@@ -156,7 +156,7 @@ Please submit bug reports, contribute new features and ask questions at
   <string name="status_loading_more">Loading messages\u2026</string>
   <string name="status_network_error">Connection error</string>
   <string name="status_invalid_id_error">Message not found</string>
-  <string name="status_loading_error">رسالة خطأ في التحميل</string>
+  <string name="status_loading_error">Message loading error</string>
   <string name="status_loading_more_failed">Retry loading more messages</string>
   <string name="load_more_messages_fmt">Load up
     to <xliff:g id="messages_to_load">%d</xliff:g> more</string>
@@ -189,7 +189,7 @@ Please submit bug reports, contribute new features and ask questions at
   <string name="notification_action_spam">Spam</string>
   <string name="notification_certificate_error_title">Certificate error for <xliff:g id="account">%s</xliff:g></string>
   <string name="notification_certificate_error_text">Check your server settings</string>
-  <string name="notification_authentication_error_title">فشل المصادقة</string>
+  <string name="notification_authentication_error_title">Authentication failed</string>
   <string name="notification_authentication_error_text">Authentication failed for <xliff:g id="account">%s</xliff:g>. Update your server settings.</string>
   <string name="notification_bg_sync_ticker">Checking mail: <xliff:g id="account">%s</xliff:g>:<xliff:g id="folder">%s</xliff:g></string>
   <string name="notification_bg_sync_title">Checking mail</string>
