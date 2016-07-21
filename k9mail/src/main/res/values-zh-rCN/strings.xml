@@ -151,7 +151,7 @@ Please submit bug reports, contribute new features and ask questions at
   <string name="status_loading_more">正在加载邮件\u2026</string>
   <string name="status_network_error">连接错误</string>
   <string name="status_invalid_id_error">邮件未找到</string>
-  <string name="status_loading_error">消息载的错误</string>
+  <string name="status_loading_error">Message loading error</string>
   <string name="status_loading_more_failed">再次尝试加载更多邮件</string>
   <string name="load_more_messages_fmt">再加载<xliff:g id="messages_to_load">%d</xliff:g>封邮件</string>
   <string name="abbrev_gigabytes">GB</string>
@@ -178,7 +178,7 @@ Please submit bug reports, contribute new features and ask questions at
   <string name="notification_action_spam">Spam</string>
   <string name="notification_certificate_error_title"><xliff:g id="account">%s</xliff:g> 认证错误</string>
   <string name="notification_certificate_error_text">请检查您的服务器设置</string>
-  <string name="notification_authentication_error_title">身份验证失败</string>
+  <string name="notification_authentication_error_title">Authentication failed</string>
   <string name="notification_authentication_error_text">Authentication failed for <xliff:g id="account">%s</xliff:g>. Update your server settings.</string>
   <string name="notification_bg_sync_ticker">正在检查邮件：<xliff:g id="account">%s</xliff:g>：<xliff:g id="folder">%s</xliff:g></string>
   <string name="notification_bg_sync_title">正在检查邮件</string>
