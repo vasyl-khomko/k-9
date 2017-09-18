@@ -1,0 +1,3 @@
+files:
+  - source: /k9mail/src/main/res/values/strings.xml
+    translation: /k9mail/src/main/res/values-%two_letters_code%/strings.xml
